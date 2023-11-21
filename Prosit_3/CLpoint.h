@@ -6,10 +6,13 @@
 using namespace std;
 
 class CLpoint{
-public:
 	double x, y;
+	static size_t nPoints;
+public:
 	CLpoint(double, double);
-	virtual void afficherCoordo() const;
+	virtual void afficherCoordo();
+	double getX();
+	double getY();
 };
 
 CLpoint::CLpoint(double new_x, double new_y) {
@@ -17,6 +20,14 @@ CLpoint::CLpoint(double new_x, double new_y) {
 	y = new_y;
 }
 
-void CLpoint::afficherCoordo() const{
-	cout << "(" << x << ";" << y << ")" << endl;
+void CLpoint::afficherCoordo(){
+	cout << "Les coordonnes sont : " << "(" << this->x << ";" << this->y << ")" << endl;
+}
+
+double CLpoint::getX() {
+	return this->x;
+}
+
+double CLpoint::getY() {
+	return this->y;
 }
